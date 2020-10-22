@@ -1,0 +1,75 @@
+Forward Design Changes Report
+-----------------------------
+
+Report File:        C:\Users\manol\OneDrive - The University of Texas at Austin\Documents\Classes\2020 Fall\EE445L\SafeBox-Breathalyzer\SafeBox (PCB - Forward Design Changes Report).txt
+Report Written:     Wednesday, October 21, 2020
+Design Path:        C:\Users\manol\OneDrive - The University of Texas at Austin\Documents\Classes\2020 Fall\EE445L\SafeBox-Breathalyzer\SafeBox.pcb
+Design Title:       
+Created:            1/29/2013 12:01:41 AM
+Last Saved:         10/20/2020 12:09:58 PM
+Editing Time:       1077 min
+Units:              mil (precision 0)
+
+Disconnected pin "U1.1" from net "PB6".
+Disconnected pin "U1.57" from net "Tach_OPA_Out".
+Disconnected pin "J4.1" from net "+Tach_DC".
+Disconnected pin "J4.2" from net "+Motor".
+Disconnected pin "J4.3" from net "-Motor".
+Disconnected pin "J4.4" from net "-Tach".
+Disconnected pin "D5.1" from net "-Motor".
+Disconnected pin "D5.2" from net "+Motor".
+Disconnected pin "R13.1" from net "PB6".
+Disconnected pin "R13.2" from net "MOTOR_TIP_IN".
+Disconnected pin "Q1.1" from net "MOTOR_TIP_IN".
+Disconnected pin "Q1.2" from net "-Motor".
+Disconnected pin "Q1.3" from net "-Tach".
+Disconnected pin "C19.1" from net "+Tach_DC".
+Disconnected pin "C19.2" from net "+Tach_AC".
+Disconnected pin "U8.1" from net "+Tach_AC".
+Disconnected pin "U8.2" from net "Tach_OPA_Power".
+Disconnected pin "U9.1" from net "+Tach_Gnd".
+Disconnected pin "U9.2" from net "+Tach_AC".
+Disconnected pin "R14.1" from net "Tach_OPA_In-".
+Disconnected pin "R14.2" from net "+Tach_AC".
+Disconnected pin "R15.1" from net "+Tach_Gnd".
+Disconnected pin "R15.2" from net "Tach_OPA_In-".
+Disconnected pin "R16.1" from net "Tach_OPA_In+".
+Disconnected pin "R16.2" from net "Tach_OPA_Out".
+Disconnected pin "R17.1" from net "Tach_OPA_In+_VoltDiv".
+Disconnected pin "R17.2" from net "Tach_OPA_In+_3.3".
+Disconnected pin "R18.1" from net "Tach_OPA_In+_Gnd".
+Disconnected pin "R18.2" from net "Tach_OPA_In+_VoltDiv".
+Disconnected pin "U10.1" from net "Tach_OPA_Out".
+Disconnected pin "U10.2" from net "Tach_OPA_In-".
+Disconnected pin "U10.3" from net "Tach_OPA_In+".
+Disconnected pin "U10.4" from net "Tach_OPA_Gnd".
+Disconnected pin "U10.8" from net "Tach_OPA_Power".
+Disconnected pin "R19.1" from net "Tach_OPA_In+_VoltDiv".
+Disconnected pin "R19.2" from net "Tach_OPA_In+".
+Disconnected pin "TP6.1" from net "+Tach_DC".
+Disconnected pin "TP7.1" from net "Tach_OPA_In+".
+Disconnected pin "TP8.1" from net "+Tach_AC".
+Disconnected pin "TP9.1" from net "-Motor".
+
+Deleted component reference "D5".
+Deleted component reference "R13".
+Deleted component reference "Q1".
+Deleted component reference "C19".
+Deleted component reference "U8".
+Deleted component reference "U9".
+Deleted component reference "R14".
+Deleted component reference "R15".
+Deleted component reference "R16".
+Deleted component reference "R17".
+Deleted component reference "R18".
+Deleted component reference "U10".
+Deleted component reference "R19".
+Deleted component reference "TP6".
+Deleted component reference "TP7".
+Deleted component reference "TP8".
+Deleted component reference "TP9".
+
+Changed component reference "J4" from component "Header4", package "SIP" to component "StepperMotor", package "SIL7".
+
+
+End Of Report.

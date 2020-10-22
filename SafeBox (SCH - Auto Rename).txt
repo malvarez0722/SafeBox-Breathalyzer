@@ -1,0 +1,18 @@
+Auto Rename
+-----------
+
+Report File:        C:\Users\manol\OneDrive - The University of Texas at Austin\Documents\Classes\2020 Fall\EE445L\SafeBox-Breathalyzer\SafeBox (SCH - Auto Rename).txt
+Report Written:     Tuesday, October 20, 2020
+Design Path:        C:\Users\manol\OneDrive - The University of Texas at Austin\Documents\Classes\2020 Fall\EE445L\SafeBox-Breathalyzer\SafeBox.sch
+Design Title:       
+Created:            
+Last Saved:         10/20/2020 12:09:54 PM
+Editing Time:       4566 min
+Units:              mil (precision 0)
+
+
+Old Name             New Name
+=============================
+
+
+0 renames performed.

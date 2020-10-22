@@ -1,0 +1,18 @@
+Design Consistency Status Report
+--------------------------------
+
+Report File:        C:\Users\manol\OneDrive - The University of Texas at Austin\Documents\Classes\2020 Fall\EE445L\SafeBox-Breathalyzer\SafeBox_wBooster (PCB - Design Consistency Status Report).txt
+Report Written:     Tuesday, October 20, 2020
+Design Path:        C:\Users\manol\OneDrive - The University of Texas at Austin\Documents\Classes\2020 Fall\EE445L\SafeBox-Breathalyzer\SafeBox_wBooster.pcb
+Design Title:       
+Created:            1/29/2013 12:01:41 AM
+Last Saved:         10/20/2020 12:34:06 PM
+Editing Time:       935 min
+Units:              mil (precision 0)
+
+
+Checking integrity of Schematic "C:\Users\manol\OneDrive - The University of Texas at Austin\Documents\Classes\2020 Fall\EE445L\SafeBox-Breathalyzer\SafeBox_wBooster.sch" with PCB "C:\Users\manol\OneDrive - The University of Texas at Austin\Documents\Classes\2020 Fall\EE445L\SafeBox-Breathalyzer\SafeBox_wBooster.pcb"
+==============================================================================================================================================================================================================================================================================================================================
+
+
+End Of Report.
