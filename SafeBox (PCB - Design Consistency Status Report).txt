@@ -2,12 +2,12 @@ Design Consistency Status Report
 --------------------------------
 
 Report File:        C:\Users\manol\OneDrive - The University of Texas at Austin\Documents\Classes\2020 Fall\EE445L\SafeBox-Breathalyzer\SafeBox (PCB - Design Consistency Status Report).txt
-Report Written:     Wednesday, October 21, 2020
+Report Written:     Thursday, October 22, 2020
 Design Path:        C:\Users\manol\OneDrive - The University of Texas at Austin\Documents\Classes\2020 Fall\EE445L\SafeBox-Breathalyzer\SafeBox.pcb
 Design Title:       
 Created:            1/29/2013 12:01:41 AM
 Last Saved:         10/20/2020 12:09:58 PM
-Editing Time:       1077 min
+Editing Time:       960 min
 Units:              mil (precision 0)
 
 
