@@ -1,0 +1,61 @@
+Design Rule Check Report
+------------------------
+
+Report File:        C:\Users\manol\OneDrive - The University of Texas at Austin\Documents\Classes\2020 Fall\EE445L\SafeBox-Breathalyzer\SafeBox (PCB - Design Rule Check Report).txt
+Report Written:     Tuesday, October 27, 2020
+Design Path:        C:\Users\manol\OneDrive - The University of Texas at Austin\Documents\Classes\2020 Fall\EE445L\SafeBox-Breathalyzer\SafeBox.pcb
+Design Title:       
+Created:            1/29/2013 12:01:41 AM
+Last Saved:         10/27/2020 12:09:10 PM
+Editing Time:       1777 min
+Units:              mm (precision 1)
+
+
+Results
+=======
+
+
+No errors found
+
+
+Settings
+========
+
+
+Spacings
+
+=========
+
+Tracks        Yes
+Pads and Vias Yes
+Shapes        Yes
+Text          Yes
+Board         Yes
+Drills        Yes
+Components    No
+
+
+Manufacturing
+
+==============
+
+Min Drill Hole Size  Yes
+Min Track Width      Yes
+Min Annular Ring     Yes
+Copper Text In Board Yes
+Mirrored Text        Yes
+Routing Areas        Yes
+Drill Breakout       Yes
+
+
+Nets
+
+=====
+
+Net Completion               Yes
+Dangling Tracks              Yes
+Net Track Length Differences No
+
+
+
+End Of Report.

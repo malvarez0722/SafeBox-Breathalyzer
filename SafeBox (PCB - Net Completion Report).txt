@@ -1,0 +1,15 @@
+Net Completion Report
+---------------------
+
+Report File:        C:\Users\manol\OneDrive - The University of Texas at Austin\Documents\Classes\2020 Fall\EE445L\SafeBox-Breathalyzer\SafeBox (PCB - Net Completion Report).txt
+Report Written:     Friday, October 23, 2020
+Design Path:        C:\Users\manol\OneDrive - The University of Texas at Austin\Documents\Classes\2020 Fall\EE445L\SafeBox-Breathalyzer\SafeBox.pcb
+Design Title:       
+Created:            1/29/2013 12:01:41 AM
+Last Saved:         10/23/2020 9:38:33 PM
+Editing Time:       1719 min
+Units:              mm (precision 1)
+
+
+No breaks found, all nets are fully routed.
+End Of Report.

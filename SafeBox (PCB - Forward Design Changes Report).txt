@@ -2,134 +2,31 @@ Forward Design Changes Report
 -----------------------------
 
 Report File:        C:\Users\manol\OneDrive - The University of Texas at Austin\Documents\Classes\2020 Fall\EE445L\SafeBox-Breathalyzer\SafeBox (PCB - Forward Design Changes Report).txt
-Report Written:     Thursday, October 22, 2020
+Report Written:     Tuesday, October 27, 2020
 Design Path:        C:\Users\manol\OneDrive - The University of Texas at Austin\Documents\Classes\2020 Fall\EE445L\SafeBox-Breathalyzer\SafeBox.pcb
 Design Title:       
 Created:            1/29/2013 12:01:41 AM
-Last Saved:         10/20/2020 12:09:58 PM
-Editing Time:       960 min
-Units:              mil (precision 0)
+Last Saved:         10/27/2020 11:12:05 AM
+Editing Time:       1772 min
+Units:              mm (precision 1)
 
-Ignoring PCB only pad J3.4 on net "GND"
-Ignoring PCB only pad J3.5 on net "GND"
-Ignoring PCB only pad J3.6 on net "GND"
-Ignoring PCB only pad J3.7 on net "GND"
-Ignoring PCB only pad J3.8 on net "GND"
+Disconnected pin "C1.1" from net "ESP_5V".
+Disconnected pin "TP1.1" from net "ESP_5V".
+Disconnected pin "TP1.2" from net "ESP_5V".
+Disconnected pin "U2.3" from net "ESP_5V".
+Disconnected pin "SW2.2" from net "ESP_5V".
+Disconnected pin "U6.6" from net "ESP_5V".
+Disconnected pin "C18.2" from net "ESP_5V".
 
-Disconnected pin "J3.1" from net "GND".
-Disconnected pin "J3.2" from net "GND".
-Disconnected pin "J3.3" from net "GND".
-Disconnected pin "U4.1" from net "PB6".
-Disconnected pin "U4.5" from net "PF4".
-Disconnected pin "U4.10" from net "PD7".
-Disconnected pin "U4.19" from net "PA2".
-Disconnected pin "U4.20" from net "PA3".
-Disconnected pin "U4.21" from net "PA4".
-Disconnected pin "U4.22" from net "PA5".
-Disconnected pin "U4.23" from net "PA6".
-Disconnected pin "U4.24" from net "PA7".
-Disconnected pin "U4.28" from net "PF0".
-Disconnected pin "U4.29" from net "PF1".
-Disconnected pin "U4.30" from net "PF2".
-Disconnected pin "U4.31" from net "PF3".
-Disconnected pin "U4.46" from net "Button_PB1".
-Disconnected pin "U4.57" from net "Tach_OPA_Out".
-Disconnected pin "U4.61" from net "PD0".
-Disconnected pin "U4.62" from net "PD1".
-Disconnected pin "U4.63" from net "PD2".
-Disconnected pin "U4.64" from net "PD3".
-Disconnected pin "J4.1" from net "+Tach_DC".
-Disconnected pin "J4.2" from net "+Motor".
-Disconnected pin "J4.3" from net "-Motor".
-Disconnected pin "J4.4" from net "-Tach".
-Disconnected pin "D5.1" from net "-Motor".
-Disconnected pin "D5.2" from net "+Motor".
-Disconnected pin "R13.1" from net "PB6".
-Disconnected pin "R13.2" from net "MOTOR_TIP_IN".
-Disconnected pin "Q1.1" from net "MOTOR_TIP_IN".
-Disconnected pin "Q1.2" from net "-Motor".
-Disconnected pin "Q1.3" from net "-Tach".
-Disconnected pin "C19.1" from net "+Tach_DC".
-Disconnected pin "C19.2" from net "+Tach_AC".
-Disconnected pin "U8.1" from net "+Tach_AC".
-Disconnected pin "U8.2" from net "Tach_OPA_Power".
-Disconnected pin "U9.1" from net "+Tach_Gnd".
-Disconnected pin "U9.2" from net "+Tach_AC".
-Disconnected pin "R14.1" from net "Tach_OPA_In-".
-Disconnected pin "R14.2" from net "+Tach_AC".
-Disconnected pin "R15.1" from net "+Tach_Gnd".
-Disconnected pin "R15.2" from net "Tach_OPA_In-".
-Disconnected pin "R16.1" from net "Tach_OPA_In+".
-Disconnected pin "R16.2" from net "Tach_OPA_Out".
-Disconnected pin "R17.1" from net "Tach_OPA_In+_VoltDiv".
-Disconnected pin "R17.2" from net "Tach_OPA_In+_3.3".
-Disconnected pin "R18.1" from net "Tach_OPA_In+_Gnd".
-Disconnected pin "R18.2" from net "Tach_OPA_In+_VoltDiv".
-Disconnected pin "U10.1" from net "Tach_OPA_Out".
-Disconnected pin "U10.2" from net "Tach_OPA_In-".
-Disconnected pin "U10.3" from net "Tach_OPA_In+".
-Disconnected pin "U10.4" from net "Tach_OPA_Gnd".
-Disconnected pin "U10.8" from net "Tach_OPA_Power".
-Disconnected pin "R19.1" from net "Tach_OPA_In+_VoltDiv".
-Disconnected pin "R19.2" from net "Tach_OPA_In+".
-Disconnected pin "TP6.1" from net "+Tach_DC".
-Disconnected pin "TP7.1" from net "Tach_OPA_In+".
-Disconnected pin "TP8.1" from net "+Tach_AC".
-Disconnected pin "TP9.1" from net "-Motor".
+Added net "+5V".
 
-Deleted component reference "U4".
-Deleted component reference "J4".
-Deleted component reference "D5".
-Deleted component reference "R13".
-Deleted component reference "Q1".
-Deleted component reference "U8".
-Deleted component reference "U9".
-Deleted component reference "R14".
-Deleted component reference "R15".
-Deleted component reference "R16".
-Deleted component reference "R17".
-Deleted component reference "R18".
-Deleted component reference "U10".
-Deleted component reference "R19".
-Deleted component reference "TP6".
-Deleted component reference "TP7".
-Deleted component reference "TP8".
-Deleted component reference "TP9".
-
-Changed component reference "J3" from component "LogicAnalyzer", package "DIP" to component "Header3", package "SIP".
-Changed component reference "C19" from component "Ceramic", package "C" to component "Ceramic0.2", package "C".
-
-Added net "N0727".
-Added net "N0728".
-Added net "N0732".
-
-Added component reference "U3" of component "BoosterPack", package "QIP".
-
-Connected pin "U1.24" to net "PA7".
-Connected pin "U1.23" to net "PA6".
-Connected pin "U1.22" to net "PA5".
-Connected pin "U1.21" to net "PA4".
-Connected pin "U1.20" to net "PA3".
-Connected pin "U1.19" to net "PA2".
-Connected pin "U1.1" to net "N0732".
-Connected pin "U1.46" to net "Button_PB1".
-Connected pin "U1.10" to net "PD7".
-Connected pin "U1.64" to net "PD3".
-Connected pin "U1.62" to net "PD1".
-Connected pin "U1.61" to net "PD0".
-Connected pin "U1.31" to net "PF3".
-Connected pin "U1.30" to net "PF2".
-Connected pin "U1.29" to net "PF1".
-Connected pin "U3.1" to net "+3.3".
-Connected pin "U3.20" to net "GND".
-Connected pin "U3.22" to net "GND".
-Connected pin "J3.1" to net "N0732".
-Connected pin "J3.2" to net "N0728".
-Connected pin "J3.3" to net "N0727".
-Connected pin "C19.1" to net "N0728".
-Connected pin "C19.2" to net "N0727".
-
-Net "ESP_Rx" changed from net class "Signal" to net class "Power".
+Connected pin "C1.1" to net "+5V".
+Connected pin "U2.3" to net "+5V".
+Connected pin "SW2.2" to net "+5V".
+Connected pin "TP1.1" to net "+5V".
+Connected pin "TP1.2" to net "+5V".
+Connected pin "U6.6" to net "+5V".
+Connected pin "C18.2" to net "+5V".
 
 
 End Of Report.
