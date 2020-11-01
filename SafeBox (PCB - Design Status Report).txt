@@ -2,6 +2,7 @@ Design Status Report
 --------------------
 
 Report File:        C:\Users\manol\OneDrive - The University of Texas at Austin\Documents\Classes\2020 Fall\EE445L\SafeBox-Breathalyzer\SafeBox (PCB - Design Status Report).txt
+<<<<<<< HEAD
 Report Written:     Friday, October 23, 2020
 Design Path:        C:\Users\manol\OneDrive - The University of Texas at Austin\Documents\Classes\2020 Fall\EE445L\SafeBox-Breathalyzer\SafeBox.pcb
 Design Title:       
@@ -9,18 +10,35 @@ Created:            1/29/2013 12:01:41 AM
 Last Saved:         10/23/2020 9:38:33 PM
 Editing Time:       1719 min
 Units:              mm (precision 1)
+=======
+Report Written:     Sunday, November 01, 2020
+Design Path:        C:\Users\manol\OneDrive - The University of Texas at Austin\Documents\Classes\2020 Fall\EE445L\SafeBox-Breathalyzer\SafeBox.pcb
+Design Title:       
+Created:            1/28/2013 11:01:41 PM
+Last Saved:         11/1/2020 5:31:08 PM
+Editing Time:       2033 min
+Units:              inches (precision 3)
+>>>>>>> Manolo
 
 
 Board Area
 ==========
 
+<<<<<<< HEAD
     10538.7 mm squared
+=======
+    16.335 inches squared
+>>>>>>> Manolo
 
 
 Board Extents
 =============
 
+<<<<<<< HEAD
     X:125.7 mm Y:83.8 mm
+=======
+    X:4.950 inches Y:3.300 inches
+>>>>>>> Manolo
 Layers
 ======
 
@@ -54,10 +72,16 @@ Header3              SIP               1   1      0    3
 Header5              SIP               1   1      0    5
 KSC353JLFG           SM                1   1      0    4
 LEDT1.75             SIP               4   4      0    8
+<<<<<<< HEAD
 LM2937ET-3.3         TO220             1   1      0    3
 LM4041               MISC              1   1      0    3
 LogicAnalyzer        DIP               1   1      0   16
 LP2950CZ-3.3         TO220             1   1      0    3
+=======
+LM2937ET-3.3         TO220             2   2      0    6
+LM4041               MISC              1   1      0    3
+LogicAnalyzer        DIP               1   1      0   16
+>>>>>>> Manolo
 OffBoardPowerSwitch  DIP               1   1      0    2
 Speaker              DIP               1   1      0    2
 ST7735               LCD               1   1      0   10
@@ -85,11 +109,19 @@ Net List
 
 Net Class Nets  Track Length Vias Connections Connection Length
 -------------------------------------------------------------------------
+<<<<<<< HEAD
 Signal    164         2689.6   94           0               0.0
 Power     17          1118.9   16           0               0.0
 Ground    1            540.0   16           0               0.0
 -------------------------------------------------------------------------
 Total:    182         4348.5  126           0               0.0
+=======
+Signal    152        107.420   98           0             0.000
+Power     15          45.209   21           0             0.000
+Ground    1           23.574   17           0             0.000
+-------------------------------------------------------------------------
+Total:    168        176.202  136           0             0.000
+>>>>>>> Manolo
 -------------------------------------------------------------------------
 
 Drill List
@@ -97,6 +129,7 @@ Drill List
 
 Drill Diameter  Number of holes
 ---------------------------------
+<<<<<<< HEAD
 0.4                         126
 0.7                          78
 0.8                           8
@@ -114,6 +147,25 @@ Drill Diameter  Number of holes
 3.2                           6
 ---------------------------------
 Total:                      346
+=======
+0.015                       136
+0.029                        78
+0.030                         8
+0.032                         3
+0.033                        12
+0.033                         2
+0.035                        16
+0.037                        40
+0.040                         8
+0.040                        26
+0.042                         6
+0.050                         8
+0.059                         2
+0.060                         5
+0.125                         6
+---------------------------------
+Total:                      356
+>>>>>>> Manolo
 ---------------------------------
 Total number of free pads 6.
 
