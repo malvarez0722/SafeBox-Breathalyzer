@@ -1,0 +1,122 @@
+Design Status Report
+--------------------
+
+Report File:        C:\Users\manol\OneDrive - The University of Texas at Austin\Documents\Classes\2020 Fall\EE445L\SafeBox-Breathalyzer\SafeBox (PCB - Design Status Report).txt
+Report Written:     Sunday, November 01, 2020
+Design Path:        C:\Users\manol\OneDrive - The University of Texas at Austin\Documents\Classes\2020 Fall\EE445L\SafeBox-Breathalyzer\SafeBox.pcb
+Design Title:       
+Created:            1/28/2013 11:01:41 PM
+Last Saved:         11/1/2020 5:31:08 PM
+Editing Time:       2033 min
+Units:              inches (precision 3)
+
+
+Board Area
+==========
+
+    16.335 inches squared
+
+
+Board Extents
+=============
+
+    X:4.950 inches Y:3.300 inches
+Layers
+======
+
+Name               Type          Side   Net
+--------------------------------------------------
+Top Silkscreen     Silk Screen   Top
+Top Copper         Electrical    Top
+Top Solder Mask    Solder Mask   Top
+Documentation1     Documentation Top
+Top Paste Mask     Paste Mask    Top
+Bottom Silkscreen  Silk Screen   Bottom
+Bottom Copper      Electrical    Bottom
+Bottom Solder Mask Solder Mask   Bottom
+Documentation2     Documentation Bottom
+
+Components
+==========
+
+Component            Package  Components Top Bottom Pins
+------------------------------------------------------------------
+0.125Wresistor       DIL              14  12      2   28
+B3F-1050             DIP               4   3      1   16
+BoosterPack          QIP               1   1      0   40
+Capacitor            C                 2   2      0    4
+Capacitor(Tantalum)  C                 1   1      0    2
+Ceramic              C                11  11      0   22
+Ceramic0.2           C                 2   2      0    4
+ESP8266              MISC              1   1      0    8
+Hammond1591E_noHoles MISC              1   1      0    0
+Header3              SIP               1   1      0    3
+Header5              SIP               1   1      0    5
+KSC353JLFG           SM                1   1      0    4
+LEDT1.75             SIP               4   4      0    8
+LM2937ET-3.3         TO220             2   2      0    6
+LM4041               MISC              1   1      0    3
+LogicAnalyzer        DIP               1   1      0   16
+OffBoardPowerSwitch  DIP               1   1      0    2
+Speaker              DIP               1   1      0    2
+ST7735               LCD               1   1      0   10
+tantalum             C                 5   5      0   10
+testpoint            BIG               5   5      0    5
+Testpoint_TwoHole    DIL               4   4      0    8
+TLV5616              DIP               1   1      0    8
+TM4C123GH6PM         LQFP              1   1      0   64
+TPA731               SM                1   1      0    8
+USB_Micro-B_SM       SM                1   0      1    9
+XTAL                 NX5032            1   1      0    2
+------------------------------------------------------------------
+Total:                                70  66      4  297
+------------------------------------------------------------------
+
+Total Pin Count
+===============
+
+Free Pads:                             6
+Total PinCount:                        303
+
+
+Net List
+========
+
+Net Class Nets  Track Length Vias Connections Connection Length
+-------------------------------------------------------------------------
+Signal    152        107.420   98           0             0.000
+Power     15          45.209   21           0             0.000
+Ground    1           23.574   17           0             0.000
+-------------------------------------------------------------------------
+Total:    168        176.202  136           0             0.000
+-------------------------------------------------------------------------
+
+Drill List
+==========
+
+Drill Diameter  Number of holes
+---------------------------------
+0.015                       136
+0.029                        78
+0.030                         8
+0.032                         3
+0.033                        12
+0.033                         2
+0.035                        16
+0.037                        40
+0.040                         8
+0.040                        26
+0.042                         6
+0.050                         8
+0.059                         2
+0.060                         5
+0.125                         6
+---------------------------------
+Total:                      356
+---------------------------------
+Total number of free pads 6.
+
+
+
+
+End Of Report.
