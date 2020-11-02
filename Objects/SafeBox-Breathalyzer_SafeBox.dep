@@ -1,0 +1,96 @@
+Dependencies for Project 'SafeBox-Breathalyzer', Target 'SafeBox': (DO NOT MODIFY !)
+F (.\src\Blynk.c)(0x5FA02B08)(--c99 --gnu -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections-I.\RTE\_SafeBox-IC:\Users\manol\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\manol\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\blynk.o --omf_browse .\objects\blynk.crf --depend .\objects\blynk.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEC30B2)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEC30B2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEC30B2)
+I (src\../inc/tm4c123gh6pm.h)(0x5F72A441)
+I (src\../inc/ST7735.h)(0x5FA01EE1)
+I (src\../inc/PLL.h)(0x5F72A442)
+I (src\../inc/Timer2.h)(0x5F72A43F)
+I (src\../inc/Timer3.h)(0x5F72A43F)
+I (src\../inc/UART.h)(0x5F72A43F)
+I (src\../inc/PortF.h)(0x5F72A43F)
+I (src\../inc/esp8266.h)(0x5FA01EE1)
+F (.\src\Latch.c)(0x5FA02B1D)(--c99 --gnu -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections-I.\RTE\_SafeBox-IC:\Users\manol\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\manol\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\latch.o --omf_browse .\objects\latch.crf --depend .\objects\latch.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEC30B2)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEC30B2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEC30AE)
+I (src\../inc/tm4c123gh6pm.h)(0x5F72A441)
+F (.\src\DAC.c)(0x5FA02B14)(--c99 --gnu -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections-I.\RTE\_SafeBox-IC:\Users\manol\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\manol\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\dac.o --omf_browse .\objects\dac.crf --depend .\objects\dac.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEC30B2)
+I (src\../inc/tm4c123gh6pm.h)(0x5F72A441)
+I (src\../inc/DAC.h)(0x5F76A9E8)
+F (.\src\esp8266.c)(0x5FA02F2B)(--c99 --gnu -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections-I.\RTE\_SafeBox-IC:\Users\manol\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\manol\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\esp8266.o --omf_browse .\objects\esp8266.crf --depend .\objects\esp8266.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEC30B2)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEC30B2)
+I (src\../inc/tm4c123gh6pm.h)(0x5F72A441)
+I (src\../inc/UART.h)(0x5F72A43F)
+I (src\../inc/ST7735.h)(0x5FA01EE1)
+I (src\../inc/esp8266.h)(0x5FA01EE1)
+F (.\src\Music.c)(0x5FA02FA7)(--c99 --gnu -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections-I.\RTE\_SafeBox-IC:\Users\manol\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\manol\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\music.o --omf_browse .\objects\music.crf --depend .\objects\music.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEC30B2)
+I (src\../inc/tm4c123gh6pm.h)(0x5F72A441)
+I (src\../inc/DAC.h)(0x5F76A9E8)
+F (.\src\ST7735.c)(0x5FA02B45)(--c99 --gnu -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections-I.\RTE\_SafeBox-IC:\Users\manol\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\manol\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\st7735.o --omf_browse .\objects\st7735.crf --depend .\objects\st7735.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEC30B2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEC30B2)
+I (src\../inc/ST7735.h)(0x5FA01EE1)
+I (src\../inc/tm4c123gh6pm.h)(0x5F72A441)
+F (.\src\PLL.c)(0x5F72A442)(--c99 --gnu -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections-I.\RTE\_SafeBox-IC:\Users\manol\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\manol\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\pll.o --omf_browse .\objects\pll.crf --depend .\objects\pll.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEC30B2)
+I (src\../inc/PLL.h)(0x5F72A442)
+I (src\../inc/tm4c123gh6pm.h)(0x5F72A441)
+F (.\src\PortF.c)(0x5FA02B50)(--c99 --gnu -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections-I.\RTE\_SafeBox-IC:\Users\manol\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\manol\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\portf.o --omf_browse .\objects\portf.crf --depend .\objects\portf.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEC30B2)
+I (src\../inc/tm4c123gh6pm.h)(0x5F72A441)
+I (src\../inc/PortF.h)(0x5F72A43F)
+F (.\src\Timer0A.c)(0x5FA02B7F)(--c99 --gnu -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections-I.\RTE\_SafeBox-IC:\Users\manol\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\manol\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\timer0a.o --omf_browse .\objects\timer0a.crf --depend .\objects\timer0a.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEC30B2)
+I (src\../inc/tm4c123gh6pm.h)(0x5F72A441)
+I (src\../inc/CortexM.h)(0x5F72A442)
+F (.\src\Timer0APWM.c)(0x5F72A442)(--c99 --gnu -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections-I.\RTE\_SafeBox-IC:\Users\manol\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\manol\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\timer0apwm.o --omf_browse .\objects\timer0apwm.crf --depend .\objects\timer0apwm.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEC30B2)
+I (src\../inc/tm4c123gh6pm.h)(0x5F72A441)
+F (.\src\Timer0APWMTestMain.c)(0x5FA02C85)(--c99 --gnu -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections-I.\RTE\_SafeBox-IC:\Users\manol\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\manol\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\timer0apwmtestmain.o --omf_browse .\objects\timer0apwmtestmain.crf --depend .\objects\timer0apwmtestmain.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEC30B2)
+I (src\../inc/Timer0APWM.h)(0x5F72A442)
+I (src\../inc/PLL.h)(0x5F72A442)
+I (src\../inc/CortexM.h)(0x5F72A442)
+F (.\src\Timer2.c)(0x5F72A43F)(--c99 --gnu -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections-I.\RTE\_SafeBox-IC:\Users\manol\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\manol\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\timer2.o --omf_browse .\objects\timer2.crf --depend .\objects\timer2.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEC30B2)
+I (src\../inc/tm4c123gh6pm.h)(0x5F72A441)
+F (.\src\Timer3.c)(0x5F72A43F)(--c99 --gnu -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections-I.\RTE\_SafeBox-IC:\Users\manol\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\manol\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\timer3.o --omf_browse .\objects\timer3.crf --depend .\objects\timer3.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEC30B2)
+I (src\../inc/tm4c123gh6pm.h)(0x5F72A441)
+F (.\src\Timer4A.c)(0x5F72A442)(--c99 --gnu -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections-I.\RTE\_SafeBox-IC:\Users\manol\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\manol\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\timer4a.o --omf_browse .\objects\timer4a.crf --depend .\objects\timer4a.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEC30B2)
+I (src\../inc/tm4c123gh6pm.h)(0x5F72A441)
+F (.\src\Timer5A.c)(0x5F72A442)(--c99 --gnu -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections-I.\RTE\_SafeBox-IC:\Users\manol\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\manol\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\timer5a.o --omf_browse .\objects\timer5a.crf --depend .\objects\timer5a.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEC30B2)
+I (src\../inc/tm4c123gh6pm.h)(0x5F72A441)
+F (.\src\UART.c)(0x5FA02C25)(--c99 --gnu -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections-I.\RTE\_SafeBox-IC:\Users\manol\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\manol\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\uart.o --omf_browse .\objects\uart.crf --depend .\objects\uart.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEC30B2)
+I (src\../inc/tm4c123gh6pm.h)(0x5F72A441)
+I (src\../inc/UART.h)(0x5F72A43F)
+F (.\src\SafeBox.c)(0x5FA02C27)(--c99 --gnu -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections-I.\RTE\_SafeBox-IC:\Users\manol\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\manol\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\safebox.o --omf_browse .\objects\safebox.crf --depend .\objects\safebox.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEC30B2)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEC30B2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEC30B2)
+I (src\../inc/tm4c123gh6pm.h)(0x5F72A441)
+I (src\../inc/PLL.h)(0x5F72A442)
+F (.\src\startup.s)(0x5F72A43F)(--cpu Cortex-M4.fp -g --apcs=interwork -I.\RTE\_SafeBox-IC:\Users\manol\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\manol\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123--pd "__UVISION_VERSION SETA 528" --pd "_RTE_ SETA 1" --pd "TM4C123GH6PM SETA 1"--list .\listings\startup.lst --xref -o .\objects\startup.o --depend .\objects\startup.d)
+F (.\inc\Latch.h)(0x5FA01EE1)()
+F (.\inc\DAC.h)(0x5F76A9E8)()
+F (.\inc\esp8266.h)(0x5FA01EE1)()
+F (.\inc\Music.h)(0x5FA01EE1)()
+F (.\inc\ST7735.h)(0x5FA01EE1)()
+F (.\inc\PLL.h)(0x5F72A442)()
+F (.\inc\PortF.h)(0x5F72A43F)()
+F (.\inc\Timer0A.h)(0x5F72A442)()
+F (.\inc\Timer0APWM.h)(0x5F72A442)()
+F (.\inc\Timer2.h)(0x5F72A43F)()
+F (.\inc\Timer3.h)(0x5F72A43F)()
+F (.\inc\Timer4A.h)(0x5F72A442)()
+F (.\inc\Timer5A.h)(0x5F72A442)()
+F (.\inc\tm4c123gh6pm.h)(0x5F72A441)()
+F (.\inc\UART.h)(0x5F72A43F)()

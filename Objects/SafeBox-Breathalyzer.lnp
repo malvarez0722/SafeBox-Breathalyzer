@@ -1,0 +1,23 @@
+--cpu=Cortex-M4.fp
+".\objects\blynk.o"
+".\objects\latch.o"
+".\objects\dac.o"
+".\objects\esp8266.o"
+".\objects\music.o"
+".\objects\st7735.o"
+".\objects\pll.o"
+".\objects\portf.o"
+".\objects\timer0a.o"
+".\objects\timer0apwm.o"
+".\objects\timer0apwmtestmain.o"
+".\objects\timer2.o"
+".\objects\timer3.o"
+".\objects\timer4a.o"
+".\objects\timer5a.o"
+".\objects\uart.o"
+".\objects\safebox.o"
+".\objects\startup.o"
+--strict --scatter ".\Objects\SafeBox-Breathalyzer.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\SafeBox-Breathalyzer.map" -o .\Objects\SafeBox-Breathalyzer.axf
