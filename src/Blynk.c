@@ -143,7 +143,7 @@ void SendInformation(void){
   LastF = thisF;
 }
 
-/** Main
+  
 int main(void){       
   PLL_Init(Bus80MHz);   // Bus clock at 80 MHz
   DisableInterrupts();  // Disable interrupts until finished with inits
@@ -172,5 +172,5 @@ int main(void){
     WaitForInterrupt(); // low power mode
   }
 }
-**/
+
 

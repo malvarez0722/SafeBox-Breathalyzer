@@ -27,37 +27,12 @@
 #include "../inc/UART.h"
 #include "../inc/ST7735.h"
 #include "../inc/esp8266.h"
-// the following two lines connect you to the internet
-//char    ssid[32]        = "EE-IOT-Platform-03";
-//char    pass[32]        = "dUQQE?&W44x7";
-//// create your own Blynk server app and edit this next line with your authentication code
-//char    auth[64]        = "1234567890";
-char    ssid[32]        = "EC";//"EE-IOT-Platform-03";
-char    pass[32]        = "abc12345";//"dUQQE?&W44x7";
-// create your own Blynk server app and edit this next line with your authentication code
-char    auth[64]        = "l6jJGA5G6FSmUwPsDvvloSSrZFNwNAs9";
 
-#define UART_FR_RXFF            0x00000040  // UART Receive FIFO Full
-#define UART_FR_TXFF            0x00000020  // UART Transmit FIFO Full
-#define UART_FR_RXFE            0x00000010  // UART Receive FIFO Empty
-#define UART_LCRH_WLEN_8        0x00000060  // 8 bit word length
-#define UART_LCRH_FEN           0x00000010  // UART Enable FIFOs
-#define UART_CTL_UARTEN         0x00000001  // UART Enable
-#define UART_IFLS_RX1_8         0x00000000  // RX FIFO >= 1/8 full
-#define UART_IFLS_TX1_8         0x00000000  // TX FIFO <= 1/8 full
-#define UART_IM_RTIM            0x00000040  // UART Receive Time-Out Interrupt
-                                            // Mask
-#define UART_IM_TXIM            0x00000020  // UART Transmit Interrupt Mask
-#define UART_IM_RXIM            0x00000010  // UART Receive Interrupt Mask
-#define UART_RIS_RTRIS          0x00000040  // UART Receive Time-Out Raw
-                                            // Interrupt Status
-#define UART_RIS_TXRIS          0x00000020  // UART Transmit Raw Interrupt
-                                            // Status
-#define UART_RIS_RXRIS          0x00000010  // UART Receive Raw Interrupt
-                                            // Status
-#define UART_ICR_RTIC           0x00000040  // Receive Time-Out Interrupt Clear
-#define UART_ICR_TXIC           0x00000020  // Transmit Interrupt Clear
-#define UART_ICR_RXIC           0x00000010  // Receive Interrupt Clear
+// the following two lines connect you to the internet
+char    ssid[32]        = "Handsome";
+char    pass[32]        = "weTheBest";
+// create your own Blynk server app and edit this next line with your authentication code
+char    auth[64]        = "UtNTsIQzVQbe-WDPgqflySwqUMn8fBhA";
 
 void DisableInterrupts(void); // Disable interrupts
 void EnableInterrupts(void);  // Enable interrupts
