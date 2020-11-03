@@ -9,19 +9,12 @@
 //
 // 
 //
-#ifndef _BREATHBOXH_
-#define _BREATHBOXH_
+#ifndef _LATCHH_
+#define _LATCHH_
 
-#include <stdint.h>
-#include <string.h>
-#include "inc/tm4c123gh6pm.h"
-#include "UART.h"
-#include "ST7735.h"
-#include "esp8266.h"
-
-void BoxInit();
-void LockBox();
-void UnlockBox();
+void LatchInit();
+void CloseLatch();
+void OpenLatch();
 
 
 #endif

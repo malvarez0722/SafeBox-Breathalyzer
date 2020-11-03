@@ -3,3 +3,4 @@
 .\objects\timer0apwmtestmain.o: src\../inc/Timer0APWM.h
 .\objects\timer0apwmtestmain.o: src\../inc/PLL.h
 .\objects\timer0apwmtestmain.o: src\../inc/CortexM.h
+.\objects\timer0apwmtestmain.o: src\../inc/tm4c123gh6pm.h

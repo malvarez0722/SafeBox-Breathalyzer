@@ -1,41 +1,52 @@
 // -------------------------------------------------------------------
-// File name:     BreathBox.c
-// Description:   this starter code is for the Breathalyzer box. It receives 
-//								data from the ESP8266.c and Locks or Closes the Box.
-// Authors:       Emilio Cantu, Manolo Alvarez, Adrian, Ethan
-// Converted to EE445L style Jonathan Valvano
-// Date:          October 29, 2020
-// Last update: October 29, 2020
-//
-// 
-//
+// File name:     Latch.c
+// Description:   This starter code is for the Latch on the SafeBox. 
+//								Latch is a plastic rod controlled by a micro servo.
+// Authors:       Manolo Alvarez
+// Last update: 	October 29, 2020
 
+/** ------------------ Micro Servo Configuration ----------------------- //
+SG90 9g Micro Servo
+ 
+ Connections:
+ Brown - Ground
+ Red - +5V
+ Organge - PB6 / PWM
+ 
+ Set-Up:
+ Periodic PWM Signal - 50 Hz
+ Duty Cycle - 1ms (-90°)
+							1.5ms (0°)
+							2ms (+90°)
+
+	Note: Shaft can only rotate a total of 180°.
+** ---------------------------------------------------------------------**/
 
 #include <stdint.h>
-#include <string.h>
-#include <stdbool.h>
 #include "../inc/tm4c123gh6pm.h"
+#include "../inc/PLL.h"
+#include "../inc/PWM.h"
 
-bool close = false;		//normal mode
+void WaitForInterrupt(void);  // low power mode
 
-//------------BoxInit------------
-// Initialize Box features ---> Switches and GPIO's
+//------------LatchInit------------
+// Initialize PWM0
 // Input: none
 // Output: none
-void BoxInit(){
-	
+void LatchInit(){
+  PWM0A_Init(800000, 60000); // initialize PWM0, 50 Hz, 10% duty
 }
-//------------LockBox------------
-// Send a signal to PB6 and close the box. Set close = true.
+//------------Close Latch------------
+// Close Latch
 // Input: none
 // Output: none
-void LockBox(){
-	close = true;
+void CloseLatch(){
+	PWM0A_Duty(80000);
 }
-//------------UnlockBox------------
-// Send a signal to PB6 and close the box
+//------------OpenLatch------------
+// Open Latch
 // Input: none
 // Output: none
-void UnlockBox(){
-	close = false;
+void OpenLatch(){
+	PWM0A_Duty(60000);
 }
