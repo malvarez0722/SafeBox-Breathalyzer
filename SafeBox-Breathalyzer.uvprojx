@@ -472,6 +472,11 @@
               <FileType>1</FileType>
               <FilePath>.\src\PWMtest.c</FilePath>
             </File>
+            <File>
+              <FileName>CortexM.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\CortexM.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -551,6 +556,11 @@
               <FileName>PWM.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\inc\PWM.h</FilePath>
+            </File>
+            <File>
+              <FileName>CortexM.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\inc\CortexM.h</FilePath>
             </File>
           </Files>
         </Group>

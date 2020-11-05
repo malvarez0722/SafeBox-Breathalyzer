@@ -27,13 +27,17 @@
 #include <stdint.h>
 #include "../inc/PLL.h"
 #include "../inc/PWM.h"
+#include "../inc/CortexM.h"
 
 void WaitForInterrupt(void);  // low power mode
+void Clock_Delay1ms(uint32_t);
 
-int main4(void){
+int main2(void){
   PLL_Init(Bus80MHz);               // bus clock at 80 MHz
-  PWM0A_Init(800000, 80000);         // initialize PWM0, 50 Hz, 10% duty
+  PWM0A_Init(25000, 2500);         // initialize PWM0, 50 Hz, 20% duty
+	Clock_Delay1ms(1000);
   while(1){
+		PWM0A_Duty(1250);							 // 10%
     WaitForInterrupt();
   }
 }

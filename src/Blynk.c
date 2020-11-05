@@ -144,7 +144,7 @@ void SendInformation(void){
 }
 
   
-int main(void){       
+int main6(void){       
   PLL_Init(Bus80MHz);   // Bus clock at 80 MHz
   DisableInterrupts();  // Disable interrupts until finished with inits
   PortF_Init();
