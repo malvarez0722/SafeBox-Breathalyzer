@@ -30,9 +30,9 @@
 
 // the following two lines connect you to the internet
 char    ssid[32]        = "Handsome";
-char    pass[32]        = "weTheBest";
+char    pass[32]        = "WeTheBest";
 // create your own Blynk server app and edit this next line with your authentication code
-char    auth[64]        = "UtNTsIQzVQbe-WDPgqflySwqUMn8fBhA";
+char    auth[64]        = "mQEtQZ3aJagl20JmWWK4Bxo9MEg92HBU";
 
 void DisableInterrupts(void); // Disable interrupts
 void EnableInterrupts(void);  // Enable interrupts
@@ -343,11 +343,11 @@ void ESP8266_SetupWiFi(void) {
   UART_OutString("Waiting for RDY flag from ESP\r\n");
 #endif
   
-#ifdef DEBUG3
-  Output_Color(ST7735_YELLOW);
-  ST7735_OutString("In WiFI_Setup routine\n");
-  ST7735_OutString("Waiting for RDY flag\n");
-#endif 
+//#ifdef DEBUG3
+//  Output_Color(ST7735_YELLOW);
+//  ST7735_OutString("In WiFI_Setup routine\n");
+//  ST7735_OutString("Waiting for RDY flag\n");
+//#endif 
   while (!RDY) {      // Wait for ESP8266 indicate it is ready for programming data
 #ifdef DEBUG1
     UART_OutString(".");
@@ -370,12 +370,12 @@ void ESP8266_SetupWiFi(void) {
   UART_OutString(pass);
   UART_OutString(",\n\r");            
 #endif
-#ifdef DEBUG3
-  Output_Color(ST7735_WHITE);
-  ST7735_OutString(ssid); ST7735_OutChar('\n');
-  ST7735_OutString(pass); ST7735_OutChar('\n');
-  ST7735_OutString(auth); ST7735_OutChar('\n');
-#endif
+//#ifdef DEBUG3
+//  Output_Color(ST7735_WHITE);
+//  ST7735_OutString(ssid); ST7735_OutChar('\n');
+//  ST7735_OutString(pass); ST7735_OutChar('\n');
+//  ST7735_OutString(auth); ST7735_OutChar('\n');
+//#endif
 
   //
   // This while loop receives debug info from the 8266 and optionally 
@@ -398,10 +398,10 @@ void ESP8266_SetupWiFi(void) {
 #endif 
   Rx5Fifo_Init(); // flush buffer
 
-#ifdef DEBUG3
-  Output_Color(ST7735_YELLOW);
-  ST7735_OutString("Exiting WiFI_Setup\nReady to talk\n");
-#endif     
+//#ifdef DEBUG3
+//  Output_Color(ST7735_YELLOW);
+//  ST7735_OutString("Exiting WiFI_Setup\nReady to talk\n");
+//#endif     
 #ifdef DEBUG1
   UART_OutString("Exiting TM4C WiFI_Setup routine\r\nReady to talk\r\n");
 #endif

@@ -18,6 +18,7 @@
 ".\objects\pwm.o"
 ".\objects\pwmtest.o"
 ".\objects\cortexm.o"
+".\objects\blynktest.o"
 --strict --scatter ".\Objects\SafeBox-Breathalyzer.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

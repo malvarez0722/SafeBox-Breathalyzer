@@ -2,11 +2,13 @@
 .\objects\blynk.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\blynk.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\blynk.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\blynk.o: src\../inc/Blynk.h
 .\objects\blynk.o: src\../inc/tm4c123gh6pm.h
 .\objects\blynk.o: src\../inc/ST7735.h
 .\objects\blynk.o: src\../inc/PLL.h
-.\objects\blynk.o: src\../inc/Timer2.h
-.\objects\blynk.o: src\../inc/Timer3.h
 .\objects\blynk.o: src\../inc/UART.h
 .\objects\blynk.o: src\../inc/PortF.h
 .\objects\blynk.o: src\../inc/esp8266.h
+.\objects\blynk.o: src\../inc/PWM.h
+.\objects\blynk.o: src\../inc/CortexM.h
+.\objects\blynk.o: src\../inc/Latch.h

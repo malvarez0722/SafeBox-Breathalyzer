@@ -27,26 +27,29 @@ SG90 9g Micro Servo
 #include "../inc/PLL.h"
 #include "../inc/PWM.h"
 
-void WaitForInterrupt(void);  // low power mode
+void Clock_Delay1ms(uint32_t);
 
 //------------LatchInit------------
 // Initialize PWM0
 // Input: none
 // Output: none
-void LatchInit(){
-  PWM0A_Init(800000, 60000); // initialize PWM0, 50 Hz, 10% duty
+void LatchInit(void){
+  PWM0A_Init(25000, 2500);       // initialize PWM0, 50 Hz, 20% duty
+	Clock_Delay1ms(1000);
 }
 //------------Close Latch------------
 // Close Latch
 // Input: none
 // Output: none
-void CloseLatch(){
-	PWM0A_Duty(80000);
+void CloseLatch(void){
+	PWM0A_Duty(1250);							 // 20%
+	Clock_Delay1ms(1000);
 }
 //------------OpenLatch------------
 // Open Latch
 // Input: none
 // Output: none
-void OpenLatch(){
-	PWM0A_Duty(60000);
+void OpenLatch(void){
+	PWM0A_Duty(2500);							 // 10%
+	Clock_Delay1ms(1000);
 }

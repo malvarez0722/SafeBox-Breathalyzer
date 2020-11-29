@@ -477,6 +477,11 @@
               <FileType>1</FileType>
               <FilePath>.\src\CortexM.c</FilePath>
             </File>
+            <File>
+              <FileName>BlynkTest.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\BlynkTest.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -561,6 +566,11 @@
               <FileName>CortexM.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\inc\CortexM.h</FilePath>
+            </File>
+            <File>
+              <FileName>Blynk.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\inc\Blynk.h</FilePath>
             </File>
           </Files>
         </Group>

@@ -12,9 +12,23 @@
 #ifndef _LATCHH_
 #define _LATCHH_
 
-void LatchInit();
-void CloseLatch();
-void OpenLatch();
+//------------LatchInit------------
+// Initialize PWM0
+// Input: none
+// Output: none
+void LatchInit(void);
+
+//------------Close Latch------------
+// Close Latch
+// Input: none
+// Output: none
+void CloseLatch(void);
+
+//------------OpenLatch------------
+// Open Latch
+// Input: none
+// Output: none
+void OpenLatch(void);
 
 
 #endif

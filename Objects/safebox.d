@@ -3,4 +3,14 @@
 .\objects\safebox.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\safebox.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\safebox.o: src\../inc/tm4c123gh6pm.h
+.\objects\safebox.o: src\../inc/ST7735.h
 .\objects\safebox.o: src\../inc/PLL.h
+.\objects\safebox.o: src\../inc/Timer2.h
+.\objects\safebox.o: src\../inc/Timer3.h
+.\objects\safebox.o: src\../inc/UART.h
+.\objects\safebox.o: src\../inc/PortF.h
+.\objects\safebox.o: src\../inc/esp8266.h
+.\objects\safebox.o: src\../inc/Blynk.h
+.\objects\safebox.o: src\../inc/PWM.h
+.\objects\safebox.o: src\../inc/CortexM.h
+.\objects\safebox.o: src\../inc/Latch.h
