@@ -23,7 +23,12 @@
 #ifndef BLYNK_H
 #define BLYNK_H
 #include <stdint.h>
+#include <stdbool.h>
 
+extern bool alcoholLimit;
+extern uint32_t pin_num; 
+extern uint32_t pin_int;
+extern int pinFlag;
 // -------------------------   TM4C_to_Blynk  -----------------------------------
 // Send data to the Blynk App
 // It uses Virtual Pin numbers between 70 and 99
