@@ -5,7 +5,8 @@
 //Lengths of notes set to 60BPM
 #define W						320000000		
 #define DH					240000000		
-#define H						160000000		
+#define H						160000000
+#define DQ					120000000
 #define Q						80000000			//Same as clock speed 80MHZ
 #define DE					60000000
 #define	T						26666667
@@ -59,14 +60,16 @@
 
 #define R			0			 // rest (no sound)
 
-#define MEASURES  288
+#define NOTES  			288
+#define TGIF_NOTES 	51
+#define RYG_NOTES 	71
 
 static uint32_t length;
 static uint32_t note;
 
 // Array for sounds
 
-	uint32_t pitch0[MEASURES] = {B4,R,B4,A4,R,A4,R,A4,B4,R,B4,R,B4,A4,R,A4,R,A4,B4,R,FS5,A5,B5,D6,CS6,A5,B5,
+	uint32_t pitch0[NOTES] = {B4,R,B4,A4,R,A4,R,A4,B4,R,B4,R,B4,A4,R,A4,R,A4,B4,R,FS5,A5,B5,D6,CS6,A5,B5,
 		B4,R,B4,A4,R,A4,R,A4,B4,R,FS5,A5,B5,B5,D5,CS5,B4,R,B4,A4,R,A4,R,A4,FS4,FS4,
 	FS5,E5,D5,CS5,D5,D5,CS5,B4,A4,CS5,CS5,D5,CS5,A4,A4,FS5,FS5,A5,GS5,E5,FS5,FS5,D5,E5,FS5,E5,
 	B5,G5,D5,B5,G5,D5,B5,CS6,D6,CS6,CS6,A5,R,B5,A5,G5,B5,A5,G5,B5,CS6,FS6,E6,E6,
@@ -78,7 +81,7 @@ static uint32_t note;
 	G3,FS3,A3,FS3,A3,B3,A3,B3,CS4,B3,CS4,D4,E4,FS4,A4,G4,A4,B4,A4,B4,CS5,B4,CS5,D5,
 	FS5,A5,FS5,D5,CS5,D5,FS5,A5,FS5,CS6,A5,FS5,CS6,B5,FS5,D5,FS5,A5,G5,FS5,E5,FS5,G5,A5,A5,FS4,A4,FS4,A4};
 		
-	uint32_t duration[MEASURES] = {Q,EI,SX,SX,H,Q,EI,SX,SX,H,Q,EI,SX,SX,H,Q,EI,SX,SX,SX,SX,SX,SX,SX,SX,SX,SX,
+	uint32_t duration[NOTES] = {Q,EI,SX,SX,H,Q,EI,SX,SX,H,Q,EI,SX,SX,H,Q,EI,SX,SX,SX,SX,SX,SX,SX,SX,SX,SX,
 	Q,EI,SX,SX,H,Q,EI,SX,SX,SX,SX,SX,SX,SX,SX,SX,Q,EI,SX,SX,H,Q,EI,SX,SX,H,
 	DE,EI,SX,SX,SX,Q,SX,SX,SX,Q,EI,SX,SX,SX,H,Q,SX,SX,SX,SX,Q,SX,SX,SX,SX,W,
 	SSX,SSX,SSX,SSX,SSX,SSX,SX,SX,SX,SX,Q,DE,SX,SSX,SSX,SSX,SSX,SSX,SSX,SX,SX,SX,SX,Q,
@@ -89,6 +92,18 @@ static uint32_t note;
 	SX,SX,SX,SX,SX,SX,SX,SX,SX,SX,SX,SX,SX,SX,EI,SX,SX,SX,SX,SX,SX,SX,SX,SX,SX,SX,SX,SX,SX,EI,
 	SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,
 	EI,SX,EI,SX,SX,SX,EI,SX,SX,SX,SX,SX,DE,EI,T,T,T,EI,SX,EI,SX,SX,SX,H,EI,SX,EI,SX,EI};
+		
+	uint32_t pitchTGIF[TGIF_NOTES] = {AS4,B4,CS5,R,CS5,R,CS5,R,AS4,B4,CS5,R,CS5,R,CS5,R,FS5,CS5,R,R,CS5,GS4,R,
+	AS4,B4,CS5,R,CS5,R,CS5,R,AS4,B4,CS5,R,CS5,R,CS5,R,FS5,CS5,AS4,R,GS4,R,AS4,R,GS4,FS4,R,FS4};
+		
+	uint32_t durationTGIF[TGIF_NOTES] = {EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,Q,EI,H,EI,DQ,H,
+	EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,Q,EI,DQ,EI,H,EI,EI,EI,EI,EI,EI};
+		
+	uint32_t pitchRYG[RYG_NOTES] = {G4,G4,G4,G4,G4,G4,G4,G4,E4,E4,G4,E4,G4,A4,G4,G4,D5,B4,A4,R,G4,A4,B4,A4,G4,B4,A4,
+	G4,G4,G4,G4,G4,G4,E4,G4,E4,G4,A4,G4,G4,D5,B4,A4,R,G4,A4,B4,A4,G4,B4,A4,G4,G4,R,G4,R,G4,R,G4,A4,B4,A4,G4,B4,A4,G4,C5,R,G4,R,A4};
+		
+	uint32_t durationRYG[RYG_NOTES] = {EI,EI,EI,DE,DE,DE,DE,EI,Q,EI,EI,EI,Q,Q,DE,DE,DE,DE,Q,Q,EI,EI,SX,SX,EI,SX,SX,EI,
+	DE,DE,DE,DE,EI,Q,EI,EI,EI,Q,Q,DE,DE,DE,DE,Q,Q,EI,EI,SX,SX,EI,SX,SX,EI,Q,EI,Q,EI,Q,DQ,Q,SX,SX,EI,SX,SX,EI,Q,EI,Q,EI,Q};
 
 
 static uint32_t position;
@@ -133,8 +148,8 @@ void Play_Note0(uint32_t note){
 void Music_Play (void) {
 	position = 0;														//restart song
 	NVIC_EN0_R ^= 1<<19;
-	length = duration[position]*8/19;	//Play first note duration
-	note = pitch0[position];			//Play first note
+	length = durationTGIF[position]>2;	//Play first note duration
+	note = pitchTGIF[position];			//Play first note
 	//envelope(length,note);
 	TIMER3_TAILR_R = length;
 	Play_Note0(note);
