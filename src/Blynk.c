@@ -38,6 +38,7 @@
 #include <stdint.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include "../inc/Blynk.h"
 #include "../inc/tm4c123gh6pm.h"
 #include "../inc/ST7735.h"
@@ -51,15 +52,16 @@
 
 uint32_t LED;      // VP1
 uint32_t LastF;    // VP74
-
+bool alcoholLimit = false;
+int pinFlag = 0;
 // These 6 variables contain the most recent Blynk to TM4C123 message
 // Blynk to TM4C123 uses VP0 to VP15
 char serial_buf[64];
 char Pin_Number[2]   = "99";       // Initialize to invalid pin number
 char Pin_Integer[8]  = "0000";     //
 char Pin_Float[8]    = "0.0000";   //
-uint32_t pin_num; 
-uint32_t pin_int;
+uint32_t pin_num = 0; 
+uint32_t pin_int = 0;
  
 void TM4C_to_Blynk(uint32_t pin,uint32_t value){
   if((pin < 70)||(pin > 99)){
@@ -98,16 +100,7 @@ void Blynk_to_TM4C(void){int j; char data;
     strcpy(Pin_Float, strtok(NULL, ","));         // Not used
     pin_num = atoi(Pin_Number);     // Need to convert ASCII to integer
     pin_int = atoi(Pin_Integer);  
-  // ---------------------------- VP #1 ----------------------------------------
-  //// TEST CODE FOR LATCH AND ESP /////
-    if(pin_num == 0x01)  {  
-      LED = pin_int;
-      PortF_Output(LED<<2); // Blue LED
-			OpenLatch();
-    } else{
-			CloseLatch();
-		}
-	//////////////////////////////////////
+		
 #ifdef DEBUG1
     UART_OutString(" Pin_Number = ");
     UART_OutString(Pin_Number);
@@ -117,7 +110,8 @@ void Blynk_to_TM4C(void){int j; char data;
     UART_OutString(Pin_Float);
     UART_OutString("\n\r");
 #endif
-  }  
+		pinFlag = 1;
+	}
 }
 
 void SendInformation(void){
