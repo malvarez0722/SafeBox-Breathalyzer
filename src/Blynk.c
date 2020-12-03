@@ -52,7 +52,7 @@
 
 uint32_t LED;      // VP1
 uint32_t LastF;    // VP74
-bool alcoholLimit = false;
+uint32_t alcoholLimit = 0;
 int pinFlag = 0;
 // These 6 variables contain the most recent Blynk to TM4C123 message
 // Blynk to TM4C123 uses VP0 to VP15
