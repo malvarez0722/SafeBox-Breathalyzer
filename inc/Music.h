@@ -18,10 +18,16 @@ static const uint16_t Bassoon64[64]={
 1023, 1046, 1092, 1177, 1224, 1186, 1133, 1098, 1102, 1109, 1076, 1027, 1003};
 
 //Initalization for timers with music
-void Timer3A_Init (void);
+void Timer0A_Init (void);
+
+void Timer1A_Init (void);
+
+void DAC_Init (uint16_t);
+
+void Music_Init(void);
 
 //Function to play Music
-void Music_Play (void);
+void Play_Music (uint8_t);
 
 //Function to play a note
 void Play_Note0(uint32_t);
