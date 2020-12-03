@@ -20,6 +20,13 @@ void EnableInterrupts(void);    // Defined in startup.s
 void DisableInterrupts(void);   // Defined in startup.s
 void WaitForInterrupt(void);    // Defined in startup.s
 
+
+
+void measureInput(){
+	
+}
+
+
 int main(void){
   PLL_Init(Bus80MHz);   // Bus clock at 80 MHz
   DisableInterrupts();  // Disable interrupts until finished with inits
@@ -70,7 +77,7 @@ int main(void){
 		// ---------------------------- VP #3 ----------------------------------------
 		// OPEN BOX/////
 			case 3:		
-				if(!alcoholLimit){ 
+				if(alcoholLimit < 950){ 
 					OpenBox();
 					OpenLatch();
 					TM4C_to_Blynk(70, 0);
@@ -82,6 +89,17 @@ int main(void){
 			case 4:
 				CloseBox();
 				CloseLatch();
+				TM4C_to_Blynk(70, 255);
+				break;
+				// ---------------------------- VP #7 ----------------------------------------
+  //// CLOSE BOX/////
+			case 8:
+				Clock_Delay1ms(10);
+				alcoholLimit = pin_int;
+				if(alcoholLimit >= 950){
+					ST7735_FillScreen(ST7735_MAGENTA);
+					ST7735_DrawString(5,7, "ALCOHOL HIGH", ST7735_BLACK);
+				}
 				TM4C_to_Blynk(70, 255);
 				break;
 	// ---------------------------- DEFAULT ----------------------------------------		
