@@ -1,19 +1,19 @@
 #include <stdint.h>
 #include "../inc/tm4c123gh6pm.h"
-#include "../inc/DAC.h"
+#include "Music.h"
 
 //Lengths of notes set to 60BPM
-#define W						320000000		
-#define DH					240000000		
-#define H						160000000
-#define DQ					120000000
-#define Q						80000000			//Same as clock speed 80MHZ
-#define DE					60000000
-#define	T						26666667
-#define EI					40000000		
-#define SX					20000000
-#define SSX					13333333
-#define TS					10000000
+#define W						160000000		
+#define DH					120000000		
+#define H						80000000
+#define DQ					60000000
+#define Q						40000000			//Half clock speed 80MHZ for 120BPM
+#define DE					30000000
+#define	T						13333334
+#define EI					20000000		
+#define SX					10000000
+#define SSX					6666667
+#define TS					5000000
 
 //Frequencies for Notes
 #define	C7		597
@@ -60,116 +60,157 @@
 
 #define R			0			 // rest (no sound)
 
-#define NOTES  			288
-#define TGIF_NOTES 	51
-#define RYG_NOTES 	71
+#define TGIF	0
+#define RYG		1
 
 static uint32_t length;
 static uint32_t note;
+static uint32_t position;
+static uint8_t Selected_Track;
 
 // Array for sounds
-
-	uint32_t pitch0[NOTES] = {B4,R,B4,A4,R,A4,R,A4,B4,R,B4,R,B4,A4,R,A4,R,A4,B4,R,FS5,A5,B5,D6,CS6,A5,B5,
-		B4,R,B4,A4,R,A4,R,A4,B4,R,FS5,A5,B5,B5,D5,CS5,B4,R,B4,A4,R,A4,R,A4,FS4,FS4,
-	FS5,E5,D5,CS5,D5,D5,CS5,B4,A4,CS5,CS5,D5,CS5,A4,A4,FS5,FS5,A5,GS5,E5,FS5,FS5,D5,E5,FS5,E5,
-	B5,G5,D5,B5,G5,D5,B5,CS6,D6,CS6,CS6,A5,R,B5,A5,G5,B5,A5,G5,B5,CS6,FS6,E6,E6,
-	CS6,D6,CS6,A5,G5,A5,B5,B5,CS6,D6,FS6,E6,D6,CS6,CS6,D6,CS6,A5,B5,B4,A4,GS4,
-	R,FS5,D5,B4,D5,FS5,E5,B5,FS5,E5,CS5,D5,E5,A4,A4,A5,G5,FS5,G5,FS5,E5,D5,CS5,A4,
-	G5,B5,CS6,D6,E6,FS6,CS6,E6,D6,D6,FS5,A5,B5,CS6,D6,CS6,E6,D6,CS6,A5,G5,FS5,
-	FS4,FS4,G4,FS4,FS4,G4,FS4,G4,A4,FS4,G4,A4,FS4,CS5,A4,FS4,D4,FS4,FS4,G4,FS4,FS4,G4,FS4,G4,A4,E4,FS4,A4,FS4,CS5,A4,FS4,CS5,
-	G5,B5,D6,G5,B5,D6,G5,B5,D6,G5,B5,D6,E6,D6,CS6,FS5,A5,CS6,FS5,A5,CS6,FS5,A5,CS6,FS5,A5,CS6,D6,CS6,CS6,
-	G3,FS3,A3,FS3,A3,B3,A3,B3,CS4,B3,CS4,D4,E4,FS4,A4,G4,A4,B4,A4,B4,CS5,B4,CS5,D5,
-	FS5,A5,FS5,D5,CS5,D5,FS5,A5,FS5,CS6,A5,FS5,CS6,B5,FS5,D5,FS5,A5,G5,FS5,E5,FS5,G5,A5,A5,FS4,A4,FS4,A4};
-		
-	uint32_t duration[NOTES] = {Q,EI,SX,SX,H,Q,EI,SX,SX,H,Q,EI,SX,SX,H,Q,EI,SX,SX,SX,SX,SX,SX,SX,SX,SX,SX,
-	Q,EI,SX,SX,H,Q,EI,SX,SX,SX,SX,SX,SX,SX,SX,SX,Q,EI,SX,SX,H,Q,EI,SX,SX,H,
-	DE,EI,SX,SX,SX,Q,SX,SX,SX,Q,EI,SX,SX,SX,H,Q,SX,SX,SX,SX,Q,SX,SX,SX,SX,W,
-	SSX,SSX,SSX,SSX,SSX,SSX,SX,SX,SX,SX,Q,DE,SX,SSX,SSX,SSX,SSX,SSX,SSX,SX,SX,SX,SX,Q,
-	SX,SX,SX,SX,EI,SX,SX,SX,SX,SX,SX,EI,SX,SX,SX,SX,SX,SX,DH,T,T,T,
-	SX,SX,SX,SX,EI,EI,EI,SX,DE,EI,SX,SX,SX,SX,SX,SX,EI,SSX,SSX,SSX,SX,SX,SX,DE,
-	SX,SX,SX,DE,EI,EI,SX,DE,EI,SX,SX,SX,SX,SX,SX,SX,EI,SX,SX,EI,SX,EI,
-	SX,TS,TS,SX,TS,TS,SX,SX,SX,EI,SX,SX,SX,SX,SX,SX,SX,SX,TS,TS,SX,TS,TS,SX,SX,SX,EI,SX,SX,SX,SX,SX,SX,SX,
-	SX,SX,SX,SX,SX,SX,SX,SX,SX,SX,SX,SX,SX,SX,EI,SX,SX,SX,SX,SX,SX,SX,SX,SX,SX,SX,SX,SX,SX,EI,
-	SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,SSX,
-	EI,SX,EI,SX,SX,SX,EI,SX,SX,SX,SX,SX,DE,EI,T,T,T,EI,SX,EI,SX,SX,SX,H,EI,SX,EI,SX,EI};
-		
+#define TGIF_NOTES 	52
 	uint32_t pitchTGIF[TGIF_NOTES] = {AS4,B4,CS5,R,CS5,R,CS5,R,AS4,B4,CS5,R,CS5,R,CS5,R,FS5,CS5,R,R,CS5,GS4,R,
-	AS4,B4,CS5,R,CS5,R,CS5,R,AS4,B4,CS5,R,CS5,R,CS5,R,FS5,CS5,AS4,R,GS4,R,AS4,R,GS4,FS4,R,FS4};
+	AS4,B4,CS5,R,CS5,R,CS5,R,AS4,B4,CS5,R,CS5,R,CS5,R,FS5,CS5,AS4,R,GS4,R,AS4,R,GS4,FS4,R,FS4,R};
 		
 	uint32_t durationTGIF[TGIF_NOTES] = {EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,Q,EI,H,EI,DQ,H,
-	EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,Q,EI,DQ,EI,H,EI,EI,EI,EI,EI,EI};
+	EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,EI,Q,EI,DQ,EI,H,EI,EI,EI,EI,EI,EI,EI};
 		
+#define RYG_NOTES 	72
 	uint32_t pitchRYG[RYG_NOTES] = {G4,G4,G4,G4,G4,G4,G4,G4,E4,E4,G4,E4,G4,A4,G4,G4,D5,B4,A4,R,G4,A4,B4,A4,G4,B4,A4,
-	G4,G4,G4,G4,G4,G4,E4,G4,E4,G4,A4,G4,G4,D5,B4,A4,R,G4,A4,B4,A4,G4,B4,A4,G4,G4,R,G4,R,G4,R,G4,A4,B4,A4,G4,B4,A4,G4,C5,R,G4,R,A4};
+	G4,G4,G4,G4,G4,G4,E4,G4,E4,G4,A4,G4,G4,D5,B4,A4,R,G4,A4,B4,A4,G4,B4,A4,G4,G4,R,G4,R,G4,R,G4,A4,B4,A4,G4,B4,A4,G4,C5,R,G4,R,A4,R};
 		
 	uint32_t durationRYG[RYG_NOTES] = {EI,EI,EI,DE,DE,DE,DE,EI,Q,EI,EI,EI,Q,Q,DE,DE,DE,DE,Q,Q,EI,EI,SX,SX,EI,SX,SX,EI,
-	DE,DE,DE,DE,EI,Q,EI,EI,EI,Q,Q,DE,DE,DE,DE,Q,Q,EI,EI,SX,SX,EI,SX,SX,EI,Q,EI,Q,EI,Q,DQ,Q,SX,SX,EI,SX,SX,EI,Q,EI,Q,EI,Q};
-
-
-static uint32_t position;
-//static int32_t play;
-//static uint16_t songCount;
-
+	DE,DE,DE,DE,EI,Q,EI,EI,EI,Q,Q,DE,DE,DE,DE,Q,Q,EI,EI,SX,SX,EI,SX,SX,EI,Q,EI,Q,EI,Q,DQ,Q,SX,SX,EI,SX,SX,EI,Q,EI,Q,EI,Q,EI};
 
 //////////////////////////////////////////////////////////////////////////
-/*
-void Timer3A_Init (void) {
-	SYSCTL_RCGCTIMER_R |= 0x08;   // 0) activate TIMER0
-  TIMER3_CTL_R = 0x00000000;    // 1) disable TIMER0A during setup
-  TIMER3_CFG_R = 0x00000000;    // 2) configure for 32-bit mode
-  TIMER3_TAMR_R = 0x00000002;   // 3) configure for periodic mode, default down-count settings
-  TIMER3_TAILR_R = 0x80000000;  // 4) reload value
-  TIMER3_TAPR_R = 0;            // 5) bus clock resolution
-  TIMER3_ICR_R = 0x00000001;    // 6) clear TIMER0A timeout flag
-	TIMER3_IMR_R = 0x00000001;
-  NVIC_PRI8_R |= 0x20000000; // 8) priority 1
+void DAC_Init (uint16_t data){
+	SYSCTL_RCGCSSI_R |= 0x02;				//activate SSI1
+	SYSCTL_RCGCGPIO_R |= 0x08;			//activate PORT D
+	
+	while((SYSCTL_RCGCGPIO_R & 0x08) == 0){};
+		SSI1_CR1_R = 0x00000000;
+		GPIO_PORTD_AFSEL_R |= 0x0B;
+		GPIO_PORTD_DEN_R |= 0x0B;
+		GPIO_PORTD_PCTL_R = (GPIO_PORTD_PCTL_R & 0xFFFF0F00) + 0x00002022;
+
+		GPIO_PORTD_AMSEL_R &= ~0x0B;
+		SSI1_CPSR_R =0x08;						//10MHz SSIClk
+		SSI1_CR0_R &= ~(0x0000FFF0);	//SCR = 0    SPH = 0   SPO = 1
+		SSI1_CR0_R += 0x40;						//SPO = 1
+		SSI1_CR0_R |= 0x0F;						//DSS 16-bit data
+		SSI1_DR_R = data;
+		SSI1_CR1_R |= 0x00000002;
+}
+
+void Timer0A_Init(void){
+  SYSCTL_RCGCTIMER_R |= 0x01;   // 0) activate TIMER0
+  TIMER0_CTL_R = 0x00000000;    // 1) disable TIMER0A during setup
+  TIMER0_CFG_R = 0x00000000;    // 2) configure for 32-bit mode
+  TIMER0_TAMR_R = 0x00000002;   // 3) configure for periodic mode, default down-count settings
+  TIMER0_TAILR_R = 0x80000000;  // 4) reload value
+  TIMER0_TAPR_R = 0;            // 5) bus clock resolution
+  TIMER0_ICR_R = 0x00000001;    // 6) clear TIMER0A timeout flag
+  NVIC_PRI4_R |= 0x20000000; 		// 8) priority 1
 // interrupts enabled in the main program after all devices initialized
 // vector number 35, interrupt number 19
-  NVIC_EN1_R = 1<<(35-32);           // 9) enable IRQ 19 in NVIC
-  TIMER3_CTL_R = 0x00000001;    // 10) enable TIMER0A
-	
+  NVIC_EN0_R = 1<<19;           // 9) enable IRQ 19 in NVIC
+  TIMER0_CTL_R = 0x00000001;    // 10) enable TIMER0A
 	return;
-};
-*/
-uint8_t key;
-void Play_Note0(uint32_t note){
-	if (note ==0){
-		NVIC_EN0_R ^= 1<<19;	//turn off note
-		TIMER0_ICR_R = 0x00000001;   			 // 6) clear TIMER0A timeout flag
-		return;
-	}
-	//restartWaveForm();
-	TIMER0_TAILR_R = note;
-	TIMER0_ICR_R = 0x00000001;   			 // 6) clear TIMER0A timeout flag
-	TIMER0_IMR_R = 0x00000001;				 // 7) arm timeout interrupt
+}
+void Timer1A_Init(void){
+  SYSCTL_RCGCTIMER_R |= 0x02;   // 0) activate TIMER0
+  TIMER1_CTL_R = 0x00000000;    // 1) disable TIMER0A during setup
+  TIMER1_CFG_R = 0x00000000;    // 2) configure for 32-bit mode
+  TIMER1_TAMR_R = 0x00000002;   // 3) configure for periodic mode, default down-count settings
+  TIMER1_TAILR_R = 0x80000000;  // 4) reload value
+  TIMER1_TAPR_R = 0;            // 5) bus clock resolution
+  TIMER1_ICR_R = 0x00000001;    // 6) clear TIMER0A timeout flag
+  NVIC_PRI5_R |= 0x2000; 				// 8) priority 1
+// interrupts enabled in the main program after all devices initialized
+// vector number 35, interrupt number 21
+  NVIC_EN0_R = 1<<21;           // 9) enable IRQ 21 in NVIC
+  TIMER1_CTL_R = 0x00000001;    // 10) enable TIMER0A	
 	return;
 }
 
-void Music_Play (void) {
+void Music_Init(void) {
+	DAC_Init(100);
+	Timer0A_Init();
+	Timer1A_Init();
+	return;
+}
+/////////////////////////////////////////////////////////////////////////////////////
+void Play_Note(uint32_t note){
+	if (note ==0){
+		NVIC_EN0_R = 1<<21;            // 9) disable interrupt 21 in NVIC
+		TIMER1_CTL_R = 0x00000000;     // 10) disable timer1A
+		return;
+	}
+	//restartWaveForm();
+	TIMER1_TAILR_R = note;
+	TIMER1_CTL_R = 0x00000001;    // 10) enable TIMER1A
+	return;
+}
+
+void Play_Music (uint8_t Track_Select) {
+	Selected_Track = Track_Select;
 	position = 0;														//restart song
 	NVIC_EN0_R ^= 1<<19;
-	length = durationTGIF[position]>2;	//Play first note duration
-	note = pitchTGIF[position];			//Play first note
+	NVIC_EN0_R ^= 1<<21;
+	
+	if (Selected_Track == TGIF){
+		length = durationTGIF[position];	//Play first note duration
+		note = pitchTGIF[position];				//Play first note
+	};
+	if (Selected_Track == RYG) {
+		length = durationRYG[position];	//Play first note duration
+		note = pitchRYG[position];				//Play first note
+	};
 	//envelope(length,note);
-	TIMER3_TAILR_R = length;
-	Play_Note0(note);
-	TIMER3_ICR_R = 0x00000001;   			 // 6) clear TIMER0A timeout flag
-	TIMER3_IMR_R = 0x00000001;    		 // 7) arm timeout interrupt
+	TIMER0_TAILR_R = length;
+	Play_Note(note);
+	TIMER0_ICR_R = 0x00000001;   			 // 6) clear TIMER0A timeout flag
+	TIMER0_IMR_R = 0x00000001;    		 // 7) arm timeout interrupt
+	TIMER1_ICR_R = 0x00000001;   			 // 6) clear TIMER0A timeout flag
+	TIMER1_IMR_R = 0x00000001;    		 // 7) arm timeout interrupt
+	TIMER0_CTL_R = 0x00000001;				 //Enable Timer 0A
 };
 
-/*
-void Timer3A_Handler (void){
+// **************DAC_Out*********************
+void DAC_Out(uint32_t code){
+	while((SSI1_SR_R & 0x00000002) == 0){}; 		// Wait until room in FIFO
+	SSI1_DR_R = code; //data out
+}
+//////////////////////////////////////////////////////////////////////
+//////Timer for Duration of Note i.e. Quarter, Half, Whole, etc.//////
+void Timer0A_Handler (void){
 	position ++;
-	if (position == MEASURES){
-		TIMER3_IMR_R = 0x00000000;
+	if ((Selected_Track == TGIF && position == TGIF_NOTES) || (Selected_Track == RYG && position == RYG_NOTES)){
+		TIMER0_IMR_R = 0x00000000;
 		TIMER0_IMR_R = 0x00000000;
 		return;
 	}
-	length = duration[position]*8/19;
-	note = pitch0[position];
-	envelope(length,note);
-	TIMER3_TAILR_R = length;   	 							 // reload value for Timer 3A
-	Play_Note0 (note);
-	TIMER3_ICR_R = TIMER_ICR_TATOCINT;   			 // Acknowledge
+	if (Selected_Track == TGIF){
+		length = durationTGIF[position];	//Play first note duration
+		note = pitchTGIF[position];				//Play first note
+	};
+	if (Selected_Track == RYG) {
+		length = durationRYG[position];	//Play first note duration
+		note = pitchRYG[position];				//Play first note
+	};
+	//envelope(length,note);
+	TIMER0_TAILR_R = length;   	 							 // reload value for Timer 0A
+	Play_Note(note);
+	TIMER0_ICR_R = TIMER_ICR_TATOCINT;   			 // Acknowledge
 };
-*/
+
+///////////Timer for Frequency of Note i.e. A4,B4,C4, etc.///////////
+uint8_t i;
+void Timer1A_Handler(void){
+	uint16_t data = Trumpet64[i];
+	DAC_Out(data);
+	i = (i+1) &0x3F;
+	TIMER1_ICR_R = TIMER_ICR_TATOCINT;   			 // Acknowledge
+	return;
+}
