@@ -25,7 +25,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-extern bool alcoholLimit;
+extern uint32_t alcoholLimit;
 extern uint32_t pin_num; 
 extern uint32_t pin_int;
 extern int pinFlag;
