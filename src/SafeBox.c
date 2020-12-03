@@ -93,8 +93,8 @@ int main(void){
 				break;
 				// ---------------------------- VP #7 ----------------------------------------
   //// CLOSE BOX/////
-			case 8:
-				Clock_Delay1ms(10);
+			case 7:
+				//Clock_Delay1ms(10);
 				alcoholLimit = pin_int;
 				if(alcoholLimit >= 950){
 					ST7735_FillScreen(ST7735_MAGENTA);
